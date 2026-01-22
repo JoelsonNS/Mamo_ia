@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laudo Médico</title>
+    <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="css/5_pagina_resultado_analise_ia.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Container principal -->
+    <div class="app">
+
+        <!-- Sidebar lateral -->
+        <aside class="sidebar">
+            <div class="doctor">
+                <img src="img/" alt="Foto do médico">
+                <div>
+                    <strong>Dr. Carlos Mendes</strong>
+                    <span>Mastologista</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <button class="menu-item"> Início</button>
+                <button class="menu-item"> Pacientes</button>
+                <button class="menu-item"> Diagnóstico</button>
+                <button class="menu-item active"> Laudo</button>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+
+            <!-- Cartão do hospital -->
+            <section class="card">
+                <header class="card-header">
+                    <h2>Hospital Santa Cruz</h2>
+                    <p>Departamento de Radiologia</p>
+                </header>
+
+                <!-- Dados do paciente -->
+                <div class="patient-info">
+                    <div>
+                        <span class="label">Paciente</span>
+                        <p>Maria Silva Oliveira</p>
+                    </div>
+                    <div>
+                        <span class="label">ID do Paciente</span>
+                        <p>849.201-55</p>
+                    </div>
+                </div>
+
+                <!-- Texto do laudo -->
+                <div class="report">
+                    <span class="label">Texto do laudo</span>
+                    <textarea readonly>
+Exame Realizado: MAMOGRAFIA DIGITAL BILATERAL
+
+Indicação Clínica: Rastreamento de rotina. Paciente assintomática, sem histórico familiar de câncer de mama.
+
+Técnica: Foram obtidas incidências craniocaudais e mediolaterais oblíquas de ambas as mamas.
+
+Análise:
+Mamas com densidade fibroglandular esparsa (ACR B), o que não reduz a sensibilidade da mamografia.
+Não foram observados nódulos espiculados, calcificações suspeitas ou distorções arquiteturais.
+Linfonodos axilares com morfologia habitual e centro radiotransparente preservado.
+
+Conclusão:
+Achados benignos. Categoria BI-RADS 2.
+
+Recomendação: Controle mamográfico anual.
+                    </textarea>
+                </div>
+            </section>
+
+            <!-- Painel lateral direito -->
+            <aside class="side-panel">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Saudável</strong>
+                        <p>Sem anomalias detectadas</p>
+                    </div>
+                </div>
+
+                <img src="img/exame_momografia.jpg" alt="Imagem de mamografia" class="exam-image">
+
+                <div class="actions">
+                    <button class="btn secondary">✏️ Editar laudo</button>
+                    <button class="btn primary">✔️ Validar laudo</button>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <!-- Conectando o JavaScript -->
+    <script src="js/5_pagina_resultado_analise_ia.js"></script>
+</body>
+</html>

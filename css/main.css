@@ -3,6 +3,7 @@
     --primary: #1a2a30;       /* Azul petróleo profundo (início do degradê) */
     --primary-dark: #111a21;  /* Azul quase preto (fim do degradê) */
     --secondary: #0d141a;     /* Fundo sólido do painel de login (lado direito) */
+    --secondary_2: #1A2A30;
     
     /* Inputs */
     --input-bg: #1a242c;      /* Fundo dos campos de texto */
