@@ -24,6 +24,21 @@ body {
     min-height: 100vh;
 }
 
+/* ============================
+   BOTÃO SAIR
+   ============================ */
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: var(--text-link);
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+    margin-top: auto;
+}
+
+
 /* ===========================
    SIDEBAR
 =========================== */
@@ -72,6 +87,36 @@ body {
 .menu-item.active,
 .menu-item:hover {
     background: rgba(12, 146, 134, 0.2);
+    color: var(--text-primary);
+}
+
+
+/* ============================
+   MENU DE NAVEGAÇÃO
+   ============================ */
+
+.menu {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.menu-item.active {
+    background-color: var(--accent);
     color: var(--text-primary);
 }
 
