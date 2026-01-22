@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Médico</title>
+
+    <!-- Importa seu tema principal -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos específicos desta página -->
+    <link rel="stylesheet" href="css/4_pagina_analise_ia.css" />
+</head>
+<body>
+
+    <!-- Container principal -->
+    <div class="app-container">
+
+        <!-- Sidebar (menu lateral esquerdo) -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="https://via.placeholder.com/60" alt="Foto do médico" />
+                <div>
+                    <strong>Dr. Roberto</strong>
+                    <span>Mastologista</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a href="#" class="menu-item">Início</a>
+                <a href="#" class="menu-item">Pacientes</a>
+                <a href="#" class="menu-item active">Diagnóstico</a>
+            </nav>
+
+            <button class="logout-btn">Sair do Sistema</button>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+
+            <!-- Cabeçalho do paciente -->
+            <section class="patient-header">
+                <div class="patient-info">
+                    <img src="https://via.placeholder.com/80" alt="Foto da paciente" />
+                    <div>
+                        <h2>Maria Silva Souza</h2>
+                        <span class="status">Pendente de Análise</span>
+                        <p>ID Paciente: 48293 • Última visita: 12/10/2023</p>
+                        <p>CPF: 123.456.789-00 • 15/05/1975 (48 anos)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Área principal dividida -->
+            <section class="content-grid">
+
+                <!-- Coluna esquerda: Dados clínicos -->
+                <div class="card clinical-data">
+                    <h3>Dados Clínicos</h3>
+                    <p><strong>Sexo Biológico:</strong> Feminino</p>
+                    <p><strong>Histórico Familiar:</strong> Mãe (CA Mama)</p>
+                    <p><strong>Médico Solicitante:</strong> Dr. Ana Pereira</p>
+                    <p><strong>Alergias:</strong> Sim (Contraste Iodado)</p>
+                </div>
+
+                <!-- Coluna direita: Visualização da imagem -->
+                <div class="card image-viewer">
+                    <div class="tabs">
+                        <button class="tab active">Mamografia Atual</button>
+                        <button class="tab">Comparativo (2021)</button>
+                    </div>
+
+                    <div class="image-container" id="imageContainer">
+
+                         <!-- Imagem -->
+                        <div id="zoomLayer" style="transform-origin: 0 0;  transition: transform 0.25s ease">
+                            <img id="examImage" src="img/exame_momografia.jpg" alt="Exame" draggable="false" />
+                        </div>
+                
+                        <div class="controls">
+                             <button id="zoomIn">+</button>
+                             <button id="zoomOut">-</button>
+                             <button id="drawROI">✏️</button>
+                             <button id="clearROI">🗑️</button>
+                             <button id="undoROI">↩️</button>
+                        </div>
+
+                       
+                    </div>
+
+                    <!-- Botão de ação -->
+                    <button class="ai-btn">Iniciar Análise IA</button>
+
+                    
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/4_pagina_analise_ia.js"></script>
+</body>
+</html>

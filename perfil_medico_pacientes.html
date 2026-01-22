@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Pacientes | Mamo.IA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/perfil_medico_pacientes.css" />
+</head>
+<body>
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <strong>Mamo.IA</strong>
+            <span>Dr. Ricardo Souza</span>
+        </div>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#" class="active">Lista de Pacientes</a>
+        </nav>
+
+        <div class="logout">Sair</div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+        <header class="header">
+            <div>
+                <h1>Lista de Pacientes</h1>
+                <p>Gerencie a fila de análise de mamografias e diagnósticos.</p>
+            </div>
+
+            <div class="filters">
+                <input type="text" placeholder="Pesquisar por nome, CPF ou prontuário..." />
+                <button class="active">Todos</button>
+                <button>Pendente</button>
+                <button>Laudo Pronto</button>
+            </div>
+        </header>
+
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prontuário</th>
+                        <th>Paciente</th>
+                        <th>Data Nasc.</th>
+                        <th>Data Exame</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#4829</td>
+                        <td>Maria Silva</td>
+                        <td>12/05/1965</td>
+                        <td>10/10/2023</td>
+                        <td><span class="badge pending">Pendente</span></td>
+                        <td><a href="#">Abrir</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#3920</td>
+                        <td>Ana Costa</td>
+                        <td>03/02/1978</td>
+                        <td>09/10/2023</td>
+                        <td><span class="badge done">Laudo Pronto</span></td>
+                        <td><a href="#">Abrir</a></td>
+                    </tr>
+
+                    <tr class="highlight">
+                        <td>#5591</td>
+                        <td>Clara Nunes</td>
+                        <td>20/11/1980</td>
+                        <td>08/10/2023</td>
+                        <td><span class="badge pending">Pendente</span></td>
+                        <td><a href="#">Abrir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="js/perfil_medico_pacientes.js"></script>
+</body>
+</html>

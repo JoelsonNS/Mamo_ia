@@ -1,0 +1,106 @@
+body {
+    height: 100vh;
+    background: linear-gradient(3deg, var(--primary), var(--primary-dark));
+    color: var(--text-primary);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LADO ESQUERDO */
+.left {
+    flex: 1;
+    padding: 60px;
+    color: var(--text-primary);
+}
+
+.logo {
+    margin-bottom: 70px;
+}
+
+.logo img {
+    width: 160px;
+}
+
+.left h1 {
+    font-size: 42px;
+    font-weight: 300;
+}
+
+.left h1 span {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.left p {
+    margin-top: 20px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* LADO DIREITO */
+.right {
+    width: 420px;
+    background-color: var(--secondary-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.login-box h2 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.login-box label {
+    color: var(--text-label);
+    font-size: 14px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btn-bg);
+    border: none;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: var(--btn-hover);
+}
+
+.login-box a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: var(--text-link);
+    font-size: 14px;
+    text-decoration: none;
+}

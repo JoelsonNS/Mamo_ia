@@ -1,0 +1,93 @@
+:root {
+    /* Cores principais - Extraídas da imagem */
+    --primary: #1a2a30;       /* Azul petróleo profundo (início do degradê) */
+    --primary-dark: #111a21;  /* Azul quase preto (fim do degradê) */
+    --secondary: #0d141a;     /* Fundo sólido do painel de login (lado direito) */
+    
+    /* Inputs */
+    --input-bg: #1a242c;      /* Fundo dos campos de texto */
+    --bg-base: #111a21;       /* Cor base para o fundo geral */
+    
+    /* Textos */
+    --text-primary: #ffffff;    /* Títulos e destaques */
+    --text-secondary: #b9c2ce;  /* Descrições e textos menores */
+    --text-tertiary: #64748b;   /* Textos de suporte ou desativados */
+    --text-label: #b9c2ce;      /* Labels dos inputs */
+    --text-link: #b9c2ce;       /* "Cadastre-se agora" */
+    
+    /* Destaques / botões */
+    --accent: #0c9286;        /* Ciano vibrante de "Segurança total" */
+    --btn-bg: #0c9286;        /* Cor do botão Entrar */
+    --btn-hover: #14b2cd;     /* Hover do botão */
+}
+
+/* Reset e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: var(--bg-base);
+    color: var(--text-primary);
+}
+
+.no-style-link {
+    text-decoration: none;  /* remove o underline */
+    color: inherit;          /* mantém a cor do elemento pai */
+    cursor: pointer;         /* opcional: mostra que é clicável */
+}
+
+/* opcional: garante que o hover também não altere nada */
+.no-style-link:hover,
+.no-style-link:focus,
+.no-style-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Container passa para uma coluna */
+    .container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    /* Header empilha logo e nav */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    header nav a {
+        margin-left: 0;
+        margin-right: 15px; /* separa links na linha */
+    }
+
+    header .logo img {
+        height: 40px; /* reduz tamanho da logo no celular */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        display: flex;
+        flex-wrap: wrap; /* se não couber, vai para a linha de baixo */
+    }
+
+    .container {
+        margin: 20px auto;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
