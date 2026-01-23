@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laudo Médico</title>
+
+  <!-- Conectando o CSS -->
+  <link rel="stylesheet" href="css/6_pagina_visualização_do_laudo.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+      <div class="doctor">
+        <img src="https://via.placeholder.com/60" alt="Foto do médico">
+        <div>
+          <strong>Dr. Roberto</strong>
+          <span>Mastologista</span>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="#" class="menu-item">Início</a>
+        <a href="4_pagina_analise_ia.html" class="menu-item">Pacientes</a>
+        <a href="5_pagina_resultado_analise_ia.html" class="menu-item">Diagnóstico</a>
+        <a href="5_pagina_resultado_analise_ia.html" class="menu-item ">Pré-visualização do Laudo</a>
+        <a href="6_pagina_visualização_do_laudo.html" class="menu-item active">Laudo</a>
+      </nav>
+
+      <!-- Botão sair fixado no final -->
+      <button class="logout-btn">Sair do Sistema</button>
+    </aside>
+
+    <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+    <main class="main-content">
+
+      <!-- Cabeçalho do paciente -->
+      <section class="patient-header">
+        <div class="patient-info">
+          <img src="https://via.placeholder.com/60" alt="Paciente">
+          <div>
+            <h2>Maria Silva Souza</h2>
+            <p>ID: 48293 • 15/05/1975 (48 anos)</p>
+          </div>
+        </div>
+
+        <a href="#" class="back-link">← Voltar para Análise</a>
+      </section>
+
+      <!-- Visualização do laudo -->
+      <section class="report-container">
+
+       
+
+        <div class="report-card">
+
+          <!-- Cabeçalho do laudo -->
+          <div class="report-header">
+            <div class="hospital">
+              <div class="hospital-icon">+</div>
+              <div>
+                <strong>HOSPITAL SANTA MÔNICA</strong>
+                <p>Centro de Diagnóstico por Imagem</p>
+                <p>Av. Paulista, 1000 - São Paulo, SP</p>
+              </div>
+            </div>
+
+            <div class="doctor-info">
+              <p><strong>Dr. Roberto Almeida</strong></p>
+              <p>Mastologista</p>
+              <p>CRM/SP 123.456</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="report-title">LAUDO DE MAMOGRAFIA DIGITAL</h2>
+
+          <!-- Dados principais -->
+          <div class="report-data">
+            <div>
+              <span>Paciente</span>
+              <p>Maria Silva Souza</p>
+            </div>
+            <div>
+              <span>Data de nascimento</span>
+              <p>15/05/1975 (48 anos)</p>
+            </div>
+            <div>
+              <span>ID do exame</span>
+              <p>MM-2023-48293</p>
+            </div>
+            <div>
+              <span>Data do exame</span>
+              <p>12/10/2023</p>
+            </div>
+          </div>
+
+          <!-- Conteúdo do laudo -->
+          <div class="report-text">
+            <h4>INDICAÇÃO CLÍNICA</h4>
+            <p>Rastreamento de rotina. Histórico familiar positivo para câncer de mama (mãe).</p>
+
+            <h4>TÉCNICA</h4>
+            <p>Exame realizado no sistema de mamografia digital direta, nas incidências craniocaudais e mediolaterais oblíquas de ambas as mamas.</p>
+
+            <h4>ANÁLISE</h4>
+            <p>Mamas com densidade fibroglandular esparsa (ACR B). Não foram observados nódulos espiculados, calcificações suspeitas ou distorções arquiteturais.</p>
+
+            <h4>CONCLUSÃO</h4>
+            <p>Achados benignos. Categoria BI-RADS 2.</p>
+
+            <h4>RECOMENDAÇÃO</h4>
+            <p>Controle mamográfico de rotina anual.</p>
+          </div>
+        </div>
+
+        <!-- Barra inferior fixa -->
+        <div class="bottom-bar">
+
+          <label class="confirm">
+            <input type="checkbox" id="confirmCheck">
+            <div class="confirm-text">
+              <strong>Validação do Laudo</strong>
+              <span>Declaro que revisei os dados gerados pela IA e concordo com o resultado final.</span>
+            </div>
+          </label>
+
+          <div class="actions">
+            <button class="btn secondary" id="printBtn" disabled>🖨️ Imprimir</button>
+            <button class="btn primary" id="exportBtn" disabled>📄 Exportar PDF</button>
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Conectando o JavaScript -->
+  <script src="js/6_pagina_visualização_do_laudo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

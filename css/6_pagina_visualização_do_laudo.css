@@ -1,0 +1,347 @@
+
+
+/* ===========================
+   RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+  font-family: Arial, sans-serif;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+.sidebar {
+  width: 220px;
+    background: #1A2A30;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.doctor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.doctor img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.doctor span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: #0C9286;
+  color: var(--text-primary);
+}
+
+/* Botão sair no final */
+.logout-btn {
+  margin-top: auto;
+  background: none;
+  border: none;
+  color: var(--text-link);
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+
+/* ===========================
+   CONTEÚDO PRINCIPAL
+=========================== */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   CABEÇALHO DO PACIENTE
+=========================== */
+.patient-header {
+  background: #1a242c;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-info img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.patient-header h2 {
+  font-size: 16px;
+}
+
+.patient-header p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.back-link {
+  color: var(--text-link);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* ===========================
+   CONTAINER DO LAUDO
+=========================== */
+.report-container {
+    flex: 2;
+    background: #1A2A30;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.report-container h3 {
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ===========================
+   CARTÃO DO LAUDO
+=========================== */
+.report-card {
+  background: #ffffff;
+  color: #000;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho do laudo */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hospital {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.hospital-icon {
+  background: #0d141a;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.hospital p {
+  font-size: 12px;
+  color: #444;
+}
+
+.doctor-info {
+  text-align: right;
+  font-size: 12px;
+}
+
+.report-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+/* Dados do exame */
+.report-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background: #f5f7fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.report-data span {
+  font-size: 11px;
+  color: #555;
+}
+
+.report-data p {
+  font-weight: bold;
+}
+
+/* Texto do laudo */
+.report-text h4 {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.report-text p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+/* ===========================
+   BARRA INFERIOR FIXA
+=========================== */
+.bottom-bar {
+  position: sticky;
+  bottom: 0;
+  margin-top: 20px;
+  background: #1a242c;
+  padding: 22px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.confirm {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.confirm-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.confirm-text strong {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.confirm-text span {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.btn.primary {
+  background: var(--btn-bg);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--btn-hover);
+}
+
+.btn.secondary {
+  background: #1a242c;
+  color: var(--text-primary);
+  border: 1px solid #2a3b46;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .report-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .report-data {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
