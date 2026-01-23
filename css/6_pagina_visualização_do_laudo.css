@@ -84,6 +84,38 @@ body {
   text-align: left;
 }
 
+
+/* ============================
+   MENU DE NAVEGAÇÃO LATERAL
+   ============================ */
+
+.menu {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.menu-item.active {
+    background-color: var(--accent);
+    color: var(--text-primary);
+}
+
+
+
 /* ===========================
    CONTEÚDO PRINCIPAL
 =========================== */
@@ -307,6 +339,11 @@ body {
   color: var(--text-primary);
   border: 1px solid #2a3b46;
 }
+
+.btn.secondary:hover {
+    background:    #32383d;
+}
+
 
 .btn:disabled {
   opacity: 0.5;

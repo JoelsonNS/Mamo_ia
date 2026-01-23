@@ -92,7 +92,7 @@ body {
 
 
 /* ============================
-   MENU DE NAVEGAÇÃO
+   MENU DE NAVEGAÇÃO LATERAL
    ============================ */
 
 .menu {
@@ -254,6 +254,10 @@ body {
     background: #1a242c;
     color: var(--text-primary);
     border: 1px solid #2a3b46;
+}
+
+.btn.secondary:hover {
+    background:    #32383d;
 }
 
 /* ===========================
