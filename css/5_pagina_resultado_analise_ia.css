@@ -134,13 +134,9 @@ body {
    CARD CENTRAL
 =========================== */
 .card {
-    flex: 2;
-    background: #1A2A30;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex: 1;
+    padding: 32px;
+    background: radial-gradient(circle at top, var(--primary), #020617);
 }
 
 .card-header h2 {
@@ -189,7 +185,7 @@ body {
 =========================== */
 .side-panel {
     width: 300px;
-    background: #1A2A30;
+    background: radial-gradient(circle at top, var(--primary), #020617);
     border-radius: 12px;
     padding: 20px;
     display: flex;
