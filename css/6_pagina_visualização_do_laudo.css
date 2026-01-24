@@ -36,35 +36,52 @@ body {
     gap: 30px;
 }
 
+.sidebar {
+    width: 220px;
+    background: #1A2A30;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .doctor {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .doctor img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
 }
 
 .doctor span {
-  font-size: 12px;
-  color: var(--text-secondary);
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .menu-item {
-  text-decoration: none;
-  color: var(--text-secondary);
-  padding: 10px;
-  border-radius: 8px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background: rgba(12, 146, 134, 0.2);
+    color: var(--text-primary);
 }
 
 .menu-item.active,
@@ -75,13 +92,13 @@ body {
 
 /* Botão sair no final */
 .logout-btn {
-  margin-top: auto;
-  background: none;
-  border: none;
-  color: var(--text-link);
-  cursor: pointer;
-  font-size: 13px;
-  text-align: left;
+    background: none;
+    border: none;
+    color: var(--text-link);
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+    margin-top: auto;
 }
 
 
@@ -113,7 +130,6 @@ body {
     background-color: var(--accent);
     color: var(--text-primary);
 }
-
 
 
 /* ===========================
