@@ -166,3 +166,30 @@ undoBtn.addEventListener("click", () => {
         lastRoi.remove();
     }
 });
+
+
+const analyzeBtn = document.getElementById("analyzeBtn");
+
+analyzeBtn.addEventListener("click", () => {
+    // Simula um processamento da IA
+    const resultadoIA = `
+Exame Realizado: MAMOGRAFIA DIGITAL BILATERAL
+
+Técnica: Foram obtidas incidências craniocaudais e mediolaterais oblíquas de ambas as mamas.
+
+Análise:
+Não foram observados nódulos suspeitos, microcalcificações agrupadas ou distorções arquiteturais.
+Padrão fibroglandular compatível com ACR B.
+
+Conclusão:
+Achados benignos. Categoria BI-RADS 2.
+
+Recomendação: Controle mamográfico anual.
+`;
+
+    // Salva o resultado para a próxima página
+    localStorage.setItem("resultadoLaudoIA", resultadoIA);
+
+    // Redireciona para a página de resultado
+    window.location.href = "5_pagina_resultado_analise_ia.html";
+});

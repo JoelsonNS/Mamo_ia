@@ -11,3 +11,13 @@ editar_laudo.addEventListener("click", () => {
 validar_laudo.addEventListener("click", () => {
     window.location.href = '6_pagina_visualização_do_laudo.html';
 });
+
+const textarea = document.getElementById("laudoTextarea");
+
+// Recupera o texto salvo da IA
+const laudoSalvo = localStorage.getItem("resultadoLaudoIA");
+
+// Se existir, mostra no textarea
+if (laudoSalvo) {
+    textarea.value = laudoSalvo;
+}
