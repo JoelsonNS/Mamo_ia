@@ -1,13 +1,13 @@
 // Botões de ação
-const editarBtn = document.querySelector(".btn.secondary");
-const validarBtn = document.querySelector(".btn.primary");
+const editar_laudo = document.getElementById("pg_edicao_laudo");
+const validar_laudo = document.getElementById("pg_validar_laudo");
 
 // Evento para editar o laudo
-editarBtn.addEventListener("click", () => {
-    alert("Função de edição ativada (simulação).");
+editar_laudo.addEventListener("click", () => {
+    window.location.href = '5.1_edicao_laudo.html';
 });
 
 // Evento para validar o laudo
-validarBtn.addEventListener("click", () => {
-    alert("Laudo validado com sucesso! ✅");
+validar_laudo.addEventListener("click", () => {
+    window.location.href = '6_pagina_visualização_do_laudo.html';
 });
