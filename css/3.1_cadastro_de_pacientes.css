@@ -1,0 +1,205 @@
+/*VARIÁVEIS*/
+:root {
+    --primary: #1a2a30;
+    --primary-dark: #111a21;
+    --secondary: #0d141a;
+
+    --input-bg: #1a242c;
+    --bg-base: #111a21;
+
+    --text-primary: #ffffff;
+    --text-secondary: #b9c2ce;
+    --text-tertiary: #64748b;
+    --text-label: #b9c2ce;
+
+    --acent: #0c9286;
+    --btn-bg: #0c9286;
+    --btn-hover: #14b2cd;
+}
+
+/*RESET BÁSICO*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*LAYOUT PRINCIPAL*/
+body {
+    background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+    color: var(--text-primary);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/*SIDEBAR*/
+.sidebar {
+    width: 220px;
+    background: var(--secondary);
+    padding: 20px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/*CONTEÚDO*/
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+    background: var(--secondary);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.grid .full {
+    grid-column: span 3;
+}
+
+/* INPUTS */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-label);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    background: var(--input-bg);
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* UPLOAD */
+.upload-box {
+    display: block;
+    padding: 40px;
+    text-align: center;
+    border: 2px dashed var(--text-tertiary);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+/* BOTÃO */
+.btn {
+    background: var(--btn-bg);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid .full {
+        grid-column: span 1;
+    }
+}
+/* LOGO DA SIDEBAR */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+}
+
+/* BOTÃO VOLTAR */
+.top-buttons {
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    background: transparent;
+    border: 1px solid var(--text-tertiary);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-voltar:hover {
+    border-color: var(--acent);
+    color: white;
+}
+
+/* TÍTULOS MENORES DOS CARDS */
+.card h4,
+.card h5 {
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
+/* UPLOAD */
+.upload input[type="file"] {
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed var(--text-tertiary);
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    cursor: pointer;
+}

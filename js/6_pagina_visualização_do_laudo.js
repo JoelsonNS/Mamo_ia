@@ -1,4 +1,3 @@
-// Seleciona os elementos corretos do HTML
 const confirmCheck = document.getElementById("confirmCheck");
 const printBtn = document.getElementById("printBtn");
 const exportBtn = document.getElementById("exportBtn");
@@ -10,19 +9,19 @@ confirmCheck.addEventListener("change", () => {
   exportBtn.disabled = !isChecked;
 });
 
-// Função de imprimir
+// Imprimir
 printBtn.addEventListener("click", () => {
   window.print();
 });
 
-// Função de exportar PDF
-exportBtn.addEventListener("click", () => {
+// Exportar PDF
+exportBtn.addEventListener("click", async () => {
+  const report = document.querySelector(".report-card");
   const { jsPDF } = window.jspdf;
+
   const pdf = new jsPDF("p", "mm", "a4");
 
-  const report = document.querySelector(".report-card");
-
-  pdf.html(report, {
+  await pdf.html(report, {
     callback: function (doc) {
       doc.save("laudo_mamografia.pdf");
     },
@@ -31,9 +30,4 @@ exportBtn.addEventListener("click", () => {
     width: 180,
     windowWidth: report.scrollWidth
   });
-});
-
-
-document.getElementById("printBtn").addEventListener("click", () => {
-  window.print();
 });

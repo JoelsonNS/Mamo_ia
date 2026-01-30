@@ -45,23 +45,33 @@ body {
     gap: 30px;
 }
 
-.doctor {
+.profile {
     display: flex;
+    gap: 16px;
     align-items: center;
-    gap: 10px;
 }
 
-.doctor img {
+.profile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.profile img {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
 }
 
-.doctor span {
-    font-size: 12px;
+.profile h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.profile p {
+    font-size: 13px;
     color: var(--text-secondary);
 }
-
 .menu {
     display: flex;
     flex-direction: column;
@@ -141,13 +151,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: radial-gradient(circle at top, var(--primary), #020617);
 }
 
 /* ===========================
    CABEÇALHO DO PACIENTE
 =========================== */
 .patient-header {
-  background: #1a242c;
+  background-color: var(--primary);
   padding: 16px;
   border-radius: 12px;
   display: flex;

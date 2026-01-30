@@ -19,7 +19,7 @@
         <!-- Sidebar (menu lateral esquerdo) -->
         <aside class="sidebar">
             <div class="profile">
-                <img src="https://via.placeholder.com/60" alt="Foto do médico" />
+                <img src="img/img_medico.jpg" alt="Foto do médico" />
                 <div>
                     <strong>Dr. Roberto</strong>
                     <span>Mastologista</span>
@@ -27,14 +27,14 @@
             </div>
 
             <nav class="menu">
-                <a href="#" class="menu-item">Início</a>
-                <a href="#" class="menu-item">Pacientes</a>
+                <a href="2_perfil_medico_pacientes.html" class="menu-item">Lista de Pacientes</a>
                 <a href="4_pagina_analise_ia.html" class="menu-item active">Diagnóstico</a>
                 <a href="5_pagina_resultado_analise_ia.html" class="menu-item ">Pré-visualização do Laudo</a>
                 <a href="6_pagina_visualização_do_laudo.html" class="menu-item ">Laudo</a>
             </nav>
 
-            <button class="logout-btn">Sair do Sistema</button>
+            <a href="1_login.html" class="logout-btn">Sair do Sistema</a>
+            
         </aside>
 
         <!-- Conteúdo principal -->
@@ -43,7 +43,6 @@
             <!-- Cabeçalho do paciente -->
             <section class="patient-header">
                 <div class="patient-info">
-                    <img src="https://via.placeholder.com/80" alt="Foto da paciente" />
                     <div>
                         <h2>Maria Silva Souza</h2>
                         <span class="status">Pendente de Análise</span>
@@ -69,7 +68,7 @@
                 <div class="card image-viewer">
                     <div class="tabs">
                         <button class="tab active">Mamografia Atual</button>
-                        <button class="tab">Comparativo (2021)</button>
+                        <button class="tab">Comparativo de Análises Anteriores</button>
                     </div>
 
                     <div class="image-container" id="imageContainer">

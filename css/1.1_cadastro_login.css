@@ -1,0 +1,118 @@
+/* ===============================
+   CONTEÚDO PRINCIPAL
+   =============================== */
+
+.cadastro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at bottom right,
+    var(--primary),
+    var(--primary-dark) 90%
+  );
+}
+
+/* Caixa de cadastro */
+.cadastro-box {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--secondary);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.cadastro-box .logo {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.cadastro-box h2 {
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.cadastro-box p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   FORMULÁRIO
+   =============================== */
+
+.cadastro-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  color: var(--text-label);
+  font-size: 14px;
+}
+
+.cadastro-box input,
+.cadastro-box select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.cadastro-box input:focus,
+.cadastro-box select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* Botão */
+.cadastro-box button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cadastro-box button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Link */
+.voltar-login {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+/* ===============================
+   SELECT TIPO USUÁRIO
+   =============================== */
+
+.tipo-container {
+  position: relative;
+}
+
+.tipo-container::after {
+  content: "▼";
+  position: absolute;
+  right: 15px;
+  top: 42px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+#tipoUsuario {
+  appearance: none;
+}

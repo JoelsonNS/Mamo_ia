@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Pacientes | Mamo.IA</title>
+
+  <!-- CSS principal (mesmo do médico) -->
+  <link rel="stylesheet" href="css/3_perfil_recepcionista_pacientes.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div>
+      <div class="logo">
+        <strong>Mamo.IA</strong>
+      </div>
+
+      <nav class="menu">
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>
+          </svg>
+          <span>Início</span>
+        </a>
+
+        <a href="#" class="active">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zm-8 6c-3.3 0-6 1.7-6 4v1h20v-1c0-2.3-2.7-4-6-4H8z"/>
+          </svg>
+          <span>Lista de Pacientes</span>
+        </a>
+      </nav>
+    </div>
+
+    <button class="logout">
+      <svg viewBox="0 0 24 24">
+        <path d="M16 17l5-5-5-5v3H9v4h7v3zM4 4h8v2H4v12h8v2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+      </svg>
+      Sair
+    </button>
+
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="content">
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+      <div class="title">
+        <h1>Lista de Pacientes</h1>
+        <p class="subtitle">
+          Gerencie os pacientes cadastrados no sistema.
+        </p>
+      </div>
+
+      <button class="btn-primary" id="btnNovoPaciente">
+        + Novo Paciente
+      </button>
+    </header>
+
+    <!-- BUSCA + FILTROS -->
+    <div class="search-filters">
+
+      <div class="search-box">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquisar por nome, CPF ou prontuário..."
+        />
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-status="todos">Todos</button>
+        <button class="filter" data-status="pendente">Pendente</button>
+        <button class="filter" data-status="laudo">Laudo Pronto</button>
+      </div>
+
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-card">
+      <table class="patients-table">
+        <thead>
+          <tr>
+            <th>Prontuário</th>
+            <th>Paciente</th>
+            <th>Data Nasc.</th>
+            <th>Data Exame</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody id="pacientesBody">
+          <!-- preenchido via JS -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<!-- JS (MANTÉM O SEU ATUAL) -->
+<script type="module" src="js/3_perfil_recepcionista_pacientes.js"></script>
+
+</body>
+</html>

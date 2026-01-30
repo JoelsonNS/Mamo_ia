@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MamoIA | Cadastro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/1.1_cadastro_login.css">
+</head>
+<body>
+
+<div class="app">
+
+
+    </nav>
+  </aside>
+
+  <!-- ============ CONTEÚDO PRINCIPAL ============ -->
+  <main class="main-content cadastro-content">
+
+    <div class="cadastro-box">
+      <img src="img/logo-mamoia.png" alt="MamoIA" class="logo">
+
+      <h2>Cadastro</h2>
+      <p>Escolha seu tipo de usuário para continuar</p>
+
+      <form id="cadastroForm">
+
+        <div class="tipo-container">
+          <label for="tipoUsuario">Tipo de Usuário</label>
+          <select id="tipoUsuario" required>
+            <option value="">Selecione</option>
+            <option value="medico">Médico</option>
+            <option value="recepcionista">Recepcionista</option>
+          </select>
+        </div>
+
+        <label>Nome Completo</label>
+        <input type="text" id="nome" required>
+
+        <label>Usuário</label>
+        <input type="text" id="usuario" required>
+
+        <label>Senha</label>
+        <input type="password" id="senha" required>
+
+        <label>Confirmar Senha</label>
+        <input type="password" id="senhaConfirm" required>
+
+        <button type="submit">Cadastrar</button>
+
+        <a href="1_login.html" class="voltar-login">Já possui conta? Entrar</a>
+      </form>
+    </div>
+
+  </main>
+
+</div>
+
+<script type="module" src="js/1.1_cadastro_login.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>MamoIA | Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/1_login.css">
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <div class="logo">
+                <img src="img/logo-mamoia.png" alt="MamoIA">
+            </div>
+
+            <h1>Diagnóstico preciso,<br>
+                <span>Segurança total.</span>
+            </h1>
+
+            <p>
+                Ambiente seguro para mastologistas e profissionais de saúde.<br>
+                Acesso restrito e monitorado.
+            </p>
+        </div>
+
+        <div class="right">
+            <form id="loginForm" class="login-box">
+                <h2>Login</h2>
+                <p>Selecione seu tipo de usuário e insira suas credenciais.</p>
+
+                <!-- SELETOR NO TOPO -->
+                <div class="tipo-container">
+                    <label for="tipoUsuario">Tipo de Usuário</label>
+                    <select id="tipoUsuario" required>
+                        <option value="">Selecione</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="medico">Médico</option>
+                        <option value="recepcionista">Recepcionista</option>
+                    </select>
+                </div>
+
+                <label>Usuário</label>
+                <input type="text" id="usuario" placeholder="Nome de usuário" required>
+
+                <label>Senha</label>
+                <input type="password" id="senha" placeholder="Senha" required>
+
+                <button type="submit">Entrar</button>
+
+                <a href="#">Cadastre-se agora</a>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/1_login.js"></script>
+</body>
+</html>

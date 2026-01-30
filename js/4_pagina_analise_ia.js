@@ -193,3 +193,11 @@ Recomendação: Controle mamográfico anual.
     // Redireciona para a página de resultado
     window.location.href = "5_pagina_resultado_analise_ia.html";
 });
+
+
+const logout = document.getElementById("botao_sair");
+
+
+logout.addEventListener("click", () => {
+    window.location.href = '1_login.html';
+});

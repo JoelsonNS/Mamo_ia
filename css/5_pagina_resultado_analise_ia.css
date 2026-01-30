@@ -36,11 +36,12 @@ body {
     font-size: 13px;
     text-align: left;
     margin-top: auto;
+    text-decoration: none;
 }
 
 
 /* ===========================
-   SIDEBAR
+   SIDEBAR MENU LATERAL
 =========================== */
 .sidebar {
     width: 220px;
@@ -50,44 +51,32 @@ body {
     flex-direction: column;
     gap: 30px;
 }
-
-.doctor {
+.profile {
     display: flex;
+    gap: 16px;
     align-items: center;
-    gap: 10px;
 }
 
-.doctor img {
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-}
-
-.doctor span {
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-.menu {
+.profile {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 16px;
+    align-items: center;
 }
 
-.menu-item {
-    background: none;
-    border: none;
+.profile img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.profile p {
+    font-size: 13px;
     color: var(--text-secondary);
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: left;
-}
-
-.menu-item.active,
-.menu-item:hover {
-    background: rgba(12, 146, 134, 0.2);
-    color: var(--text-primary);
 }
 
 
@@ -128,6 +117,7 @@ body {
     padding: 20px;
     display: flex;
     gap: 20px;
+    
 }
 
 /* ===========================

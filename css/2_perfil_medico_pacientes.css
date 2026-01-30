@@ -1,0 +1,280 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--text-primary);
+}
+
+.app {
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo strong {
+    font-size: 20px;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+}
+
+nav a {
+    display: block;
+    padding: 12px;
+    margin-top: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+nav a.active,
+nav a:hover {
+    background: var(--btn-bg);
+}
+
+.logout {
+    opacity: 0.8;
+}
+
+/* Conteúdo */
+.content {
+    flex: 1;
+    padding: 32px;
+    background: radial-gradient(circle at top, var(--primary), #020617);
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.header p {
+    color: var(--text-tertiary);
+    margin-top: 4px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.filters input {
+    flex: 1;
+    padding: 10px 14px;
+    background: var(--input-bg);
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.filters button {
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid var(--btn-bg);
+    color: var(--text-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filters button.active,
+.filters button:hover {
+    background: var(--btn-bg);
+}
+
+.filters button.danger {
+    border-color: #dc2626;
+    color: #fecaca;
+}
+
+/* Tabela */
+.table-container {
+    margin-top: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    color: var(--text-label);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+tr.highlight {
+    background: rgba(220, 38, 38, 0.15);
+}
+
+a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+/* Badges */
+/* Estilo base do status */
+.badge {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+/* PENDENTE — laranja forte */
+.badge.pending {
+    background-color: #d5510f; /* laranja forte */
+    color: #ffffff;
+}
+
+/* LAUDO PRONTO — verde */
+.badge.done {
+    background-color: #2a5c2c; /* verde escuro */
+    color: #ffffff;
+}
+
+
+.pending {
+    background: #92400e;
+    color: #fde68a;
+}
+
+.done {
+    background: #065f46;
+    color: #a7f3d0;
+}
+
+.danger {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+/* Paginação */
+.pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-tertiary);
+}
+
+.pagination button {
+    background: transparent;
+    border: 1px solid var(--btn-bg);
+    color: white;
+    padding: 6px 10px;
+    margin-left: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination button.active,
+.pagination button:hover {
+    background: var(--btn-bg);
+}
+/* ===== CORREÇÃO SIDEBAR ===== */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* força tudo para o topo */
+}
+
+.sidebar nav {
+    margin-top: 20px;
+
+}
+
+.logout {
+    margin-top: auto; /* mantém o botão Sair no final da barra */
+    font-size: 13px;
+}
+
+/* ============================
+   CABEABEÇALHO DO MÉDICO
+   ============================ */
+
+.profile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.profile img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.profile p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+
+
+/* ===============================
+   BOTÃO "REALIZAR ANÁLISE / ABRIR"
+   =============================== */
+
+.table-container td .acao-link {
+    background-color: #2563eb; /* azul elegante */
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 
+        background-color 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+.table-container td .acao-link:hover {
+    background-color: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.table-container td .acao-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Pacientes | Mamo.IA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/2_perfil_medico_pacientes.css" />
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+         <div class="profile">
+                <img src="img/img_medico.jpg" alt="Foto do médico" />
+                <div>
+                    <strong>Dr. Roberto</strong>
+                    <span>Mastologista</span>
+                </div>
+            </div>
+
+
+
+        <a href="1_login.html" class="logout">Sair do Sistema</a>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+        <header class="header">
+            <div>
+                <h1>Lista de Pacientes</h1>
+                <p>Gerencie a fila de análise de mamografias e diagnósticos.</p>
+            </div>
+
+            <div class="filters">
+                <input type="text" placeholder="Pesquisar por nome, CPF ou prontuário..." />
+                <button class="active">Todos</button>
+                <button>Pendente</button>
+                <button>Laudo Pronto</button>
+            
+            </div>
+        </header>
+
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prontuário</th>
+                        <th>Paciente</th>
+                        <th>Data Nasc.</th>
+                        <th>Data Exame</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                   
+                </tbody>
+
+            </table>
+        </section>
+    </main>
+</div>
+
+<script type="module" src="js/2_perfil_medico_pacientes.js"></script>
+
+</body>
+</html>
