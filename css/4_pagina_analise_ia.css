@@ -300,6 +300,24 @@ body {
     margin: 0 auto; /* Centraliza o quadrado na coluna */
 }
 
+/* Ajuste no Wrapper de Zoom */
+#zoomLayer {
+    position: relative;
+    display: inline-block;
+    /* Altere transform-origin para center para facilitar o cálculo do flexbox */
+    transform-origin: center center; 
+    transition: transform 0.2s ease-out;
+    /* Impede que as ROIs internas afetem o tamanho do layer */
+    pointer-events: auto; 
+}
+
+/* IMPORTANTE: Assegure que a imagem não tenha margens fantasmas */
+#examImage {
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 /* Imagem do exame */
 .image-container img {
     max-width: 100%;

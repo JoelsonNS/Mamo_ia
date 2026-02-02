@@ -75,17 +75,30 @@ clearBtn.addEventListener("click", () => {
    ============================ */
 
 imageContainer.addEventListener("mousedown", (e) => {
-    // Só desenha se o modo estiver ativo
-    if (!isDrawModeActive) return;
-
-    // Evita desenhar ao clicar nos botões
+    if (!isDrawModeActive || e.button !== 0) return;
     if (e.target.closest(".controls")) return;
 
     isDrawing = true;
 
-    const rect = zoomLayer.getBoundingClientRect();
-    startX = (e.clientX - rect.left) / zoomLevel;
-    startY = (e.clientY - rect.top) / zoomLevel;
+    // Usamos o container fixo como referência de tela
+    const rect = imageContainer.getBoundingClientRect();
+    
+    // Calculamos a posição relativa ao container, 
+    // compensando o zoom para que a coordenada seja "real" dentro do zoomLayer
+    startX = (e.clientX - rect.left - (imageContainer.clientWidth / 2)) / zoomLevel + (zoomLayer.clientWidth / 2);
+    startY = (e.clientY - rect.top - (imageContainer.clientHeight / 2)) / zoomLevel + (zoomLayer.clientHeight / 2);
+
+    // Ajuste simplificado: se a imagem estiver centralizada e sem Pan, use:
+    // startX = (e.clientX - rect.left) / zoomLevel;
+    // startY = (e.clientY - rect.top) / zoomLevel;
+    // Mas para precisão total com FLEXBOX, use a lógica abaixo:
+    
+    const containerRect = imageContainer.getBoundingClientRect();
+    const layerRect = zoomLayer.getBoundingClientRect();
+
+    // Esta é a fórmula mais precisa para elementos transformados:
+    startX = (e.clientX - layerRect.left) / zoomLevel;
+    startY = (e.clientY - layerRect.top) / zoomLevel;
 
     currentRoi = document.createElement("div");
     currentRoi.classList.add("roi-box");
@@ -106,9 +119,9 @@ imageContainer.addEventListener("mousedown", (e) => {
 imageContainer.addEventListener("mousemove", (e) => {
     if (!isDrawing || !currentRoi) return;
 
-    const rect = zoomLayer.getBoundingClientRect();
-    const currentX = (e.clientX - rect.left) / zoomLevel;
-    const currentY = (e.clientY - rect.top) / zoomLevel;
+    const layerRect = zoomLayer.getBoundingClientRect();
+    const currentX = (e.clientX - layerRect.left) / zoomLevel;
+    const currentY = (e.clientY - layerRect.top) / zoomLevel;
 
     const width = currentX - startX;
     const height = currentY - startY;
@@ -129,9 +142,6 @@ window.addEventListener("mouseup", () => {
 
 const undoBtn = document.getElementById("undoROI");
 
-document.querySelectorAll(".controls button").forEach(btn => {
-    btn.addEventListener("mousedown", e => e.stopPropagation());
-});
 
 
 /* ============================
