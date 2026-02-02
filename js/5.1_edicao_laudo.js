@@ -21,3 +21,4 @@ saveBtn.addEventListener('click', () => {
 btnCancel.addEventListener('click', () => {
   window.location.href = '5_pagina_resultado_analise_ia.html';
 });
+

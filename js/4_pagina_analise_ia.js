@@ -43,18 +43,21 @@ zoomOutBtn.addEventListener("click", () => {
    ============================ */
 
 drawBtn.addEventListener("click", () => {
-    isDrawModeActive = !isDrawModeActive; // Inverte o estado (true/false)
+    isDrawModeActive = !isDrawModeActive;
 
     if (isDrawModeActive) {
         imageContainer.style.cursor = "crosshair";
-        drawBtn.classList.add("active"); // Adiciona uma classe para feedback visual
-        drawBtn.style.backgroundColor = "var(--accent)"; // Exemplo de destaque
+        drawBtn.classList.add("active");
+        drawBtn.style.backgroundColor = "var(--accent)";
     } else {
         imageContainer.style.cursor = "default";
         drawBtn.classList.remove("active");
-        drawBtn.style.backgroundColor = ""; // Volta ao normal
+        drawBtn.style.backgroundColor = "";
+        isDrawing = false;
+        currentRoi = null;
     }
 });
+
 
 /* ... (suas funções de zoom permanecem iguais) ... */
 
@@ -62,79 +65,50 @@ drawBtn.addEventListener("click", () => {
    LIMPAR TODAS AS DEMARCAÇÕES
    ============================ */
 clearBtn.addEventListener("click", () => {
-    const allRois = document.querySelectorAll(".roi-box");
+    const allRois = zoomLayer.querySelectorAll(".roi-box");
     allRois.forEach(box => box.remove());
-    roiCount = 0; // Reinicia a contagem
+    roiCount = 0;
 });
 
 /* ============================
-   LÓGICA DE DESENHO
+   LÓGICA DE DESENHO CORRIGIDA
    ============================ */
 
-// Quando o usuário pressionar o mouse
 imageContainer.addEventListener("mousedown", (e) => {
-    if (imageContainer.style.cursor !== "crosshair") return;
+    // Só desenha se o modo estiver ativo
+    if (!isDrawModeActive) return;
+
+    // Evita desenhar ao clicar nos botões
+    if (e.target.closest(".controls")) return;
 
     isDrawing = true;
-    const rect = zoomLayer.getBoundingClientRect();
 
+    const rect = zoomLayer.getBoundingClientRect();
     startX = (e.clientX - rect.left) / zoomLevel;
     startY = (e.clientY - rect.top) / zoomLevel;
 
-    // Criar a caixa
     currentRoi = document.createElement("div");
     currentRoi.classList.add("roi-box");
-    
-    // Criar a etiqueta de texto (NOVO)
-    roiCount++; 
+
+    roiCount++;
     const label = document.createElement("span");
     label.classList.add("roi-label");
-    label.innerText = `#${roiCount}`; // Define o texto como #1, #2...
-    
-    currentRoi.appendChild(label); // Coloca o texto dentro da caixa
+    label.innerText = `#${roiCount}`;
+    currentRoi.appendChild(label);
 
     currentRoi.style.left = `${startX}px`;
     currentRoi.style.top = `${startY}px`;
 
     zoomLayer.appendChild(currentRoi);
-    e.preventDefault(); 
+    e.preventDefault();
 });
 
-// Quando o usuário pressionar o mouse
-imageContainer.addEventListener("mousedown", (e) => {
-    if (imageContainer.style.cursor !== "crosshair") return;
-
-    isDrawing = true;
-
-    const rect = imageContainer.getBoundingClientRect();
-    // Use scrollLeft/scrollTop caso o container tenha scroll no futuro
-    startX = e.clientX - rect.left;
-    startY = e.clientY - rect.top;
-
-    if (roiBox) roiBox.remove();
-
-    roiBox = document.createElement("div");
-    roiBox.classList.add("roi-box");
-    
-    // Configuração inicial
-    roiBox.style.left = `${startX}px`;
-    roiBox.style.top = `${startY}px`;
-    roiBox.style.width = "0px";
-    roiBox.style.height = "0px";
-
-    imageContainer.appendChild(roiBox);
-    
-    // Evita que o navegador selecione textos ou arraste a imagem
-    e.preventDefault(); 
-});
-
-// Enquanto o usuário arrasta o mouse
 imageContainer.addEventListener("mousemove", (e) => {
     if (!isDrawing || !currentRoi) return;
 
-    const rect = imageContainer.getBoundingClientRect();
-    const currentX = e.clientX - rect.left;
-    const currentY = e.clientY - rect.top;
+    const rect = zoomLayer.getBoundingClientRect();
+    const currentX = (e.clientX - rect.left) / zoomLevel;
+    const currentY = (e.clientY - rect.top) / zoomLevel;
 
     const width = currentX - startX;
     const height = currentY - startY;
@@ -145,15 +119,20 @@ imageContainer.addEventListener("mousemove", (e) => {
     currentRoi.style.top = `${height < 0 ? currentY : startY}px`;
 });
 
-// Quando soltar o mouse
 window.addEventListener("mouseup", () => {
     if (isDrawing) {
         isDrawing = false;
-        currentRoi = null; // "Soltamos" a referência para que a próxima marcação seja um novo elemento
+        currentRoi = null;
     }
 });
 
+
 const undoBtn = document.getElementById("undoROI");
+
+document.querySelectorAll(".controls button").forEach(btn => {
+    btn.addEventListener("mousedown", e => e.stopPropagation());
+});
+
 
 /* ============================
    DESFAZER ÚLTIMA MARCAÇÃO
